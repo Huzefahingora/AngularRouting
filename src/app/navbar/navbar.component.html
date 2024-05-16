@@ -1,0 +1,34 @@
+<div class="main-container">
+  <div class="nav-container">
+      <ul>
+          <li [routerLinkActive]="'active'"><a routerLink="/top/home">Home</a></li>
+          <li [class.active]="isCourseRoute()"><a routerLink="/courses">Courses</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="/mid/feedback">Feedback</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="/mid/contact">Contact</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="/bot/about">About</a></li>
+        <span class="options">
+          <li>
+            <ul>
+                <li [mat-menu-trigger-for]="appmenu">More Features</li>
+            </ul>
+            <mat-menu #appmenu="matMenu" [routerLinkActive]="'active'" >
+              <a routerLink="/bot/pipe">  <button mat-menu-item >Pipe</button></a>
+              <a routerLink="/mid/http">  <button mat-menu-item>Products</button></a>
+              <a routerLink="/bot/mat"> <button mat-menu-item >mat</button></a>
+            </mat-menu>
+        </li>
+        </span>
+          <span class="right-menu">
+              <li [routerLinkActive]="'active'">
+                  <a routerLink="/mid/favorite">
+                      <mat-icon matBadge={{arraySize}} matBadgeColor="warn" matBadgeHidden="{{arraySize ==0}}">favorite</mat-icon>
+                  </a>
+              </li>
+              <li [routerLinkActive]="'active'" *ngIf="!loginState" class="login">
+                  <a routerLink="/top/login"></a>
+              </li>
+              <li (click)="logout()" *ngIf="loginState" class="login"><a><mat-icon>logout</mat-icon></a></li>
+          </span>
+      </ul>
+  </div>
+</div>

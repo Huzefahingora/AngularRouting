@@ -1,0 +1,61 @@
+.course-container {
+    width: 580px;
+    margin: 20px auto;
+    padding: 10px 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back {
+    position: absolute;
+    left: 20px;
+    top: 70px;
+}
+
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.course-name {
+    text-align: center;
+}
+
+.edit-mode {
+    text-align: center;
+}
+
+.course-details {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.course-details div {
+    margin: 0 10px;
+}
+
+.course-price {
+    margin: 0 10px;
+}
+
+.course-description {
+    margin: 20px 10px;
+}
+
+.edit-mode-button,
+.update-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

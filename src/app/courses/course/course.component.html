@@ -1,0 +1,29 @@
+<div class="course-container">
+    <span class="back">
+        <button class="back-button" (click)="back()"><mat-icon>arrow_back</mat-icon></button>
+    </span>
+    <div>
+        <img src="{{course.image}}" width="560" height="280">
+    </div>
+    <div>
+        <h1 class="course-name" *ngIf="!editMode">{{course.name}}</h1>
+        <div class="edit-mode" *ngIf="editMode">
+            <input type="text" [(ngModel)]="course.name">
+        </div>
+    </div>
+    <div class="course-details">
+        <div><b>Author: </b>{{course.author}}</div>
+        <div><b>Duration: </b>{{course.duration}}H</div>
+        <div><b>Type: </b>{{course.type}}</div>
+    </div>
+    <div>
+        <h2 class="course-price">Price: {{course.price}}$</h2>
+    </div>
+    <div class="course-description">
+        <p>{{course.description}}</p>
+    </div>
+    <div *ngIf="editRight">
+        <div *ngIf="!editMode"><button class="edit-mode-button" (click)="onEditMode('e')">EditMode</button></div>
+        <div *ngIf="editMode"><button class="update-button" (click)="onEditMode('u')">Update</button></div>
+    </div>
+</div>

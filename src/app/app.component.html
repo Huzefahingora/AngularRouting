@@ -1,0 +1,13 @@
+<div class="main-container">
+    <div class="nav-container" *ngIf="checkState()">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="component-container">
+        <!-- <app-home></app-home>
+        <app-about></app-about>
+        <app-contact></app-contact>
+        <app-courses></app-courses> -->
+        <router-outlet id = 'Course'></router-outlet>
+    </div>
+</div>

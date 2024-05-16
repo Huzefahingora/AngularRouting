@@ -1,0 +1,142 @@
+.main-area {
+  margin: 30px 20px;
+  padding: 20px;
+}
+
+.content-area {
+  padding: 20px;
+  background-color: #ECF0F1;
+}
+
+.header {
+  text-align: center;
+  color: #21618C;
+}
+
+h3 {
+  color: #21618C;
+  margin: 10px 0;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ECF0F1;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-area,
+.product-display-area {
+  width: 100%;
+  padding: 10px;
+}
+
+input[type=text],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #48C9B0;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #1ABC9C;
+}
+
+#products {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#products td,
+#products th {
+  padding: 4px;
+}
+
+#products tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#products tr:hover {
+  background-color: #ddd;
+}
+
+#products th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #222;
+  color: white;
+}
+
+button {
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+}
+
+.btn-delete {
+  background-color: #FB5027;
+  color: white;
+}
+
+.btn-edit {
+  background-color: rgb(139, 139, 187);
+  color: white;
+}
+.btn-fetch {
+  background-color: #3498DB;
+  color: white;
+}
+
+.btn-clear {
+  background-color: #F5B041;
+  color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+      flex-direction: row;
+  }
+  .form-area,
+  .product-display-area {
+      width: 100%;
+  }
+}
+input.ng-touched.ng-invalid{
+  border: red 1px solid;
+}
+
+small{
+  color: red;
+}

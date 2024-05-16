@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Favorite Courses</h2>
+    <ng-container *ngFor="let course of favoriteCourses">
+        <div class="course-container">
+            <div class="course-card">
+                <div>
+                    <img [src]="course.image" style="width:220px; height:140px;">
+                </div>
+                <div class="course-name"><h4>{{ course.name}}</h4></div>
+                <div class="course-description"><p>{{course.description.slice(0, 80)}}...</p></div>
+                <div class="details">
+                    <div class="course-type" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}">{{course.type}}</div>
+                    <div class="course-price"><b>Price:</b> ${{course.price}}</div>
+                </div>
+                <div class="course-buttons">
+                    <button class="btn btn-show" routerLink="/Course/{{course.id}}"><mat-icon>info</mat-icon></button>
+                    <button class="btn btn-buy" (click)="remove(course.id)"><mat-icon>remove</mat-icon></button>
+
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <div *ngIf='!favAvl'>
+        <h1>No have Not Added Any Course in Favorite List Go and Add It</h1>
+        <button class="btn btn-buy" (click)="gotToCourses()">Go To Courses Page</button>
+    </div>
+</div>

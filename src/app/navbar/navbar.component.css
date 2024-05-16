@@ -1,0 +1,81 @@
+.main-container {
+  width: 100%;
+
+}
+
+.nav-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333; /* Dark background color */
+}
+
+.nav-container li {
+  float: left;
+}
+
+.nav-container li a {
+  display: block;
+  color: white; /* Text color */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-container li a:hover {
+  background-color: #111; /* Darker background color on hover */
+}
+
+.nav-container .active {
+  background-color: black; /* Active menu item background color */
+}
+
+.nav-container .mat-menu-trigger {
+  display: block;
+  color: white; /* Text color */
+  padding: 14px 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav-container .mat-menu-trigger:hover {
+  background-color: #111; /* Darker background color on hover */
+}
+
+.mat-menu-content {
+  background-color: #333; /* Dark background color for menu items */
+  color: black; /* Text color for menu items */
+}
+
+.mat-menu-content a {
+  color: white; /* Text color for menu item links */
+  text-decoration: none;
+}
+
+.mat-menu-content a:hover {
+  background-color: #111; /* Darker background color for menu items on hover */
+}
+
+.right-menu{
+  float: right;
+}
+
+
+.options{
+  color: white;
+  background-color: #333;
+}
+.options :hover{
+  background-color: white;
+}
+.options .active{
+  background-color: black;
+}
+
+
+
+.active {
+  background-color: black;
+  color: white;
+}

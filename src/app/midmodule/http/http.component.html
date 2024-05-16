@@ -1,0 +1,72 @@
+<div class="main-area">
+  <div class="content-area">
+    <div class="header">
+      <h1>Manage Products</h1>
+      <hr>
+    </div>
+    <div class="container">
+      <!--Add product form-->
+      <div class="form-area">
+        <h3>Create Product</h3>
+        <form #productForm="ngForm" (ngSubmit)="onProductCreate(productForm.value)" [formGroup]="reactiveForm">
+          <label>Procuct Name</label>
+          <input type="text" name="pname"  formControlName="pname">
+
+          <label>Procuct Description</label>
+          <input name="desc"  type="text" formControlName="pdesc">
+
+          <label>Procuct Price</label>
+
+          <input type="number" name="pprice"  formControlName="pprice">
+          <div *ngIf="!valid">
+            <small>
+              Plaese fill all the field
+            </small>
+          </div>
+          <input type="submit" value="{{editMode ? 'Update The Product' : 'Add Product' }}" >
+        </form>
+      </div>
+
+      <!--Display product area-->
+      <div class="product-display-area">
+        <h3>All Products</h3>
+        <table id="products">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+            <th></th>
+          </tr>
+          <tr *ngIf='allProduct.length < 1 && (!isFatching && !errorMessage)'>
+            <td colspan="5">No Products Available</td>
+          </tr>
+          <tr *ngIf='errorMessage != null'>
+            <td colspan="5">{{errorMessage}}</td>
+          </tr>
+          <tr *ngIf='isFatching && !errorMessage'>
+           <mat-spinner ></mat-spinner>
+            <td colspan="5">Product's Loading...</td>
+          </tr>
+          <tr *ngFor="let prod of allProduct; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{prod.pname}}</td>
+            <td>{{prod.pdesc}}</td>
+            <td>{{prod.pprice}}</td>
+            <td><button class="btn-delete" (click)="onDeleteProduct(prod.id)"><mat-icon>delete</mat-icon></button>
+            <button class="btn-edit" (click)="onEditProduct(prod.id)"><mat-icon>edit</mat-icon></button></td>
+
+          </tr>
+        </table>
+        <hr>
+        <br><br>
+
+        <div class="action-btn-container">
+          <button class="btn-fetch" (click)="onFatchProduct()" ><mat-icon>download</mat-icon></button>
+          <button class="btn-clear" (click)="deleteAll()"><mat-icon>clear_all</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

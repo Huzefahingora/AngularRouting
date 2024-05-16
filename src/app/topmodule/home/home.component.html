@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="hero-section">
+       <h1 class="mat-display-4" style="background-color: #ccc;" >Learn Courses from best </h1>
+    </div>
+    <div class="main">
+        <h2 class="mat-display-2"  style="background-color: #ccc;">Popular Courses</h2>
+        <hr style="border: #ccc 2px solid; margin: 5px 0px">
+
+        <ng-container *ngFor="let course of courses">
+            <div class="course-container" *ngIf="course.ratings >= 4.6">
+                <div class="course-card">
+                    <div>
+                        <img [src]="course.image" style="width:220px; height:140px;">
+                    </div>
+                    <div class="course-name"><h4>{{ course.name}}</h4></div>
+                    <div class="course-description"><p>{{course.description.slice(0, 80)}}...</p></div>
+                    <div class="details">
+                        <div class="course-type" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}">{{course.type}}</div>
+                        <div class="course-price"><b>Price:</b> ${{course.price}}</div>
+                    </div>
+                    <div class="course-buttons">
+                      <button class="btn btn-buy" (click)="openDialog(course)" style="width: 100%;">Click Here</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </ng-container>
+        <br><br>
+        <!-- <div *ngIf="showSuccessMessage" class="success-message">
+             added to favorites successfully!
+          </div>
+          <div *ngIf="showAlredyMassage" class="success-message">
+            Already Added In Favorite!
+         </div> -->
+
+    </div>
+</div>
+

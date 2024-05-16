@@ -1,0 +1,47 @@
+<div class="main-area">
+  <div class="content-area">
+    <div class="header">
+      <h1>Manage Courses</h1>
+      <hr>
+    </div>
+    <div class="container">
+      <!-- Add course form -->
+      <div class="form-area">
+        <h3>Create Course</h3>
+        <form #courseForm="ngForm" (ngSubmit)="onCourseCreate(courseForm.value)" [formGroup]="reactiveForm">
+          <label>Course Name</label>
+          <input type="text" name="cname" formControlName="cname">
+
+          <label>Course Author</label>
+          <input type="text" name="cauthor" formControlName="cauthor">
+
+          <label>Course Duration (in hours)</label>
+          <input type="number" name="cduration" formControlName="cduration">
+
+          <label>Course Type</label>
+          <input type="text" name="ctype" formControlName="ctype">
+
+          <label>Price</label>
+          <input type="number" name="price" formControlName="price">
+
+          <label>Ratings</label>
+          <input type="number" name="ratings" formControlName="ratings">
+
+          <label>Image URL</label>
+          <input type="text" name="image" formControlName="image">
+
+          <label>Description</label>
+          <textarea name="description" formControlName="description"></textarea>
+
+          <div *ngIf="!valid">
+            <small>Please fill in all the fields</small>
+          </div>
+          <input type="submit" value="{{editMode ? 'Update The Course' : 'Add Course' }}">
+        </form>
+      </div>
+
+      <!-- Display course area -->
+      <!-- Add display logic for courses similar to the product display area -->
+    </div>
+  </div>
+</div>

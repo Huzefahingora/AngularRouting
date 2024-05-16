@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div style="text-align:center">
+      <h2>Contact Us</h2>
+      <p>Swing by for a cup of coffee, or leave us a message:</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <form action="/action_page.php" (ngSubmit)="formSubmit()" #contactForm = "ngForm">
+          <label for="fname">First Name</label>
+          <div ngModelGroup="personalDetail" #personalDetail="ngModelGroup">
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." ngModel required #fname='ngModel'> 
+            <!-- <div>
+              <small *ngIf="fname.invalid && fname.touched">Firstname is required field </small>
+            </div> -->
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." ngModel required>
+            <label for="lname">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email.." ngModel required email>
+          </div>
+          <label for="country">Country</label>
+          <select id="country" name="country"  ngModel >
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+          <label for="Gender">Gender : </label>
+          <span *ngFor="let gen of gender" >
+            <input type="radio" id="{{gen.value}}" value="{{gen.value}}" name="gender" [ngModel] = "defaultGender" >
+            <label for="{{gen.value}}">{{gen.value}}</label>
+          </span>
+          <br><br>
+          <label for="subject">Subject</label>
+
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" ngModel></textarea>
+          <div *ngIf="personalDetail.invalid && personalDetail.touched">
+            <small>some required field are empty please fill all required fields</small>
+          </div>
+          <input type="submit" value="Submit" >
+        </form>
+      </div>
+
+      <div class="form-data">
+        <h3>Form Data</h3>
+        <p>First Name: <b>{{firstName}}</b></p>
+        <p>Last Name: <b>{{lastName}}</b></p>
+        <p>Email: <b>{{email}}</b></p>
+        <p>Country: <b>{{country}}</b></p>
+        <p>Gender: <b>{{genderD}}</b></p>
+        <p>Subject: <b>{{subject}}</b></p>
+
+      </div>
+    </div>
+  </div>

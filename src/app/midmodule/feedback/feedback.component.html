@@ -1,0 +1,32 @@
+<div class="container">
+  <div style="text-align:center">
+    <h2>Feedback Form</h2>
+    <p>We'd love to hear from you!</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div class="myform">
+        <form class="mform" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" [ngClass]="formStatus">
+          <div formGroupName="reqDetails">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name.." formControlName="name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email.." formControlName="email">
+            <span *ngIf="!reactiveForm.get('reqDetails.email').valid && reactiveForm.get('reqDetails.email').touched"><small>give valid email id</small></span>
+            <br><br>
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" name="feedback" placeholder="Tell us your thoughts..." style="height:170px" formControlName="feedback"></textarea>
+          </div>
+          <div formArrayName="hobbies">
+            <ng-container *ngFor="let hobbie of reactiveForm.get('hobbies')['controls']; index as i">
+              <input type="text" placeholder="Add your Hobbies" formControlName="{{i}}">
+            </ng-container>
+            <button type="button" (click)="addHobbie()">+ Add More Hobbies</button> <!-- Change type to "button" -->
+            <br><br>
+          </div>
+          <button type="submit" value="submit" class="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+
+.submit{
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center; /* Center the content horizontally */
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  display: inline-block; /* Make the column inline block */
+  width: 50%;
+  padding: 20px;
+  text-align: left; /* Reset text alignment for form elements */
+  margin: 0 auto; /* Center the column horizontally */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input.ng-invalid.ng-touched{
+border: red 1px solid;
+}
+small{
+color: red;
+}
+.form, .form-data{
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+width: 400px;
+margin: 30px auto;
+}
+.name.ng-invalid .ng-touched{
+  border: red 1px solid;
+}
+.email.ng-invalid .ng-touched{
+  border: red 1px solid;
+}
+
+
